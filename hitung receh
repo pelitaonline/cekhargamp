@@ -1,0 +1,138 @@
+<html>
+<head>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hitung Pecahan</h1>
+  <p>Masukan jumlah  masing2 pecahan uang</p>
+  <table id="denominations">
+    <tr>
+      <th>Pecahan Uang</th>
+      <th>Jumlah Lembar</th>
+      <th>Total</th>
+    </tr>
+    <tr>
+      <td>Rp. 100.000</td>
+      <td><input type="number" id="hundred" value="" min="0"></td>
+      <td id="total_hundred">Rp. 0</td>
+    </tr>
+    <tr>
+      <td>Rp. 50.000</td>
+      <td><input type="number" id="fifty" value="" min="0"></td>
+      <td id="total_fifty">Rp. 0</td>
+    </tr>
+    <tr>
+      <td>Rp. 20.000</td>
+      <td><input type="number" id="twenty" value="" min="0"></td>
+      <td id="total_twenty">Rp. 0</td>
+    </tr>
+    <tr>
+      <td>Rp. 10.000</td>
+      <td><input type="number" id="ten" value="" min="0"></td>
+      <td id="total_ten">Rp. 0</td>
+    </tr>
+    <tr>
+      <td>Rp. 5.000</td>
+      <td><input type="number" id="five" value="" min="0"></td>
+      <td id="total_five">Rp. 0</td>
+    </tr>
+    <tr>
+      <td>Rp. 2.000</td>
+      <td><input type="number" id="two" value="" min="0"></td>
+      <td id="total_two">Rp. 0</td>
+    </tr>    
+    <tr>
+      <td>Rp. 1.000</td>
+      <td><input type="number" id="one" value="" min="0"></td>
+      <td id="total_one">Rp. 0</td>      
+    </tr>
+    <tr>
+      <td>Rp. 500</td>
+      <td><input type="number" id="gope" value="" min="0"></td>
+      <td id="total_gope">Rp. 0</td>      
+    </tr>
+    <tr>      
+      <th colspan="2">Grand Total</th>      
+      <th id="grand_total">Rp. 0</th>      
+    </tr>    
+  </table>  
+  <button onclick="calculate()">Hitung</button>  
+  <!-- Script untuk menghitung total uang -->
+  <!-- Sumber: pengetahuan saya sendiri -->
+  <!-- Tidak ada hak cipta -->
+  <!-- Silakan gunakan dan modifikasi sesuai kebutuhan Anda -->
+  <!-- Saya tidak bertanggung jawab atas kesalahan atau kerugian yang timbul dari penggunaan kode ini -->
+  <!-- Selamat mencoba! -->
+  <!-- Bing 😊 -->
+<script>  
+function calculate() {    
+// Mendapatkan elemen input dan output dari tabel    
+var hundred = document.getElementById("hundred");    
+var fifty = document.getElementById("fifty");    
+var twenty = document.getElementById("twenty");    
+var ten = document.getElementById("ten");    
+var five = document.getElementById("five");    
+var two = document.getElementById("two");    
+var one = document.getElementById("one"); 
+
+var gope = document.getElementById("gope");
+
+var total_hundred = document.getElementById("total_hundred");    
+var total_fifty = document.getElementById("total_fifty");    
+var total_twenty = document.getElementById("total_twenty");    
+var total_ten = document.getElementById("total_ten");    
+var total_five = document.getElementById("total_five");    
+var total_two = document.getElementById("total_two");    
+var total_one = document.getElementById("total_one");    
+var total_gope = document.getElementById("total_gope");
+
+var grand_total = document.getElementById("grand_total");    
+    
+// Menghitung total uang untuk masing-masing pecahan    
+var total_hundred_value = hundred.value * 100000;    
+var total_fifty_value = fifty.value * 50000;    
+var total_twenty_value = twenty.value * 20000;    
+var total_ten_value = ten.value * 10000;    
+var total_five_value = five.value * 5000;    
+var total_two_value = two.value * 2000;    
+var total_one_value = one.value * 1000;  
+var total_gope_value = gope.value * 500;
+    
+// Menghitung grand total uang    
+var grand_total_value = total_hundred_value + total_fifty_value + total_twenty_value + total_ten_value + total_five_value + total_two_value + total_one_value + total_gope_value;    
+    
+// Menampilkan hasil perhitungan ke tabel dengan format rupiah    
+total_hundred.innerHTML = "Rp. " + formatRupiah(total_hundred_value);    
+total_fifty.innerHTML = "Rp. " + formatRupiah(total_fifty_value);    
+total_twenty.innerHTML = "Rp. " + formatRupiah(total_twenty_value);    
+total_ten.innerHTML = "Rp. " + formatRupiah(total_ten_value);    
+total_five.innerHTML = "Rp. " + formatRupiah(total_five_value);    
+total_two.innerHTML = "Rp. " + formatRupiah(total_two_value);    
+total_one.innerHTML = "Rp. " + formatRupiah(total_one_value);    
+total_gope.innerHTML = "Rp. " + formatRupiah(total_gope_value);
+
+grand_total.innerHTML = "Rp. " + formatRupiah(grand_total_value);  
+}  
+  
+// Fungsi untuk memformat angka ke rupiah  
+// Sumber: https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string  
+function formatRupiah(number) {    
+var formatter = new Intl.NumberFormat('id-ID', {      
+style: 'currency',      
+currency: 'IDR',      
+minimumFractionDigits: 0,      
+maximumFractionDigits: 0,      
+});      
+return formatter.format(number);  
+}  
+</script>
+</body>
+</html>
