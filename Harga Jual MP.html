@@ -6,7 +6,7 @@
 <body>
 
 <h2>Kalkulator Harga Jual</h2>
-<h3>Updated : 16 Jan 2025</h3>
+<h3>Updated : 10 Jun 2025</h3>
 
 <form>
   <label for="modal">Modal:</label>
@@ -24,7 +24,7 @@
     <th>Copy</th>
   </tr>
   <tr>
-    <td>Tokped Kecil</td>
+    <td>Tokped Kecil(<666.667)</td>
     <td id="tokpedKecil"></td>
     <td><button onclick="copyToClipboard('tokpedKecil')">Copy</button></td>
   </tr>
@@ -44,7 +44,7 @@
     <td><button onclick="copyToClipboard('shopeeBesar')">Copy</button></td>
   </tr>
   <tr>
-    <td>Tiktok Kecil</td>
+    <td>Tiktok Kecil(<666.667)</td>
     <td id="tiktokkecil"></td>
     <td><button onclick="copyToClipboard('tiktokkecil')">Copy</button></td>
   <tr style="background-color: #FFFF99;">
@@ -69,12 +69,12 @@
 function hitungHarga() {
   var modal = parseFloat(document.getElementById("modal").value);
   
-  var hargaTokpedKecil = Math.ceil(modal / 0.88 / 1000) * 1000;
-  var hargaTokpedBesar = Math.ceil((modal + 20000) / 0.92 / 1000) * 1000;
+  var hargaTokpedKecil = Math.ceil(modal / 0.86 / 1000) * 1000;
+  var hargaTokpedBesar = Math.ceil((modal + 40000) / 0.92 / 1000) * 1000;
   var hargaShopeeBesar = Math.ceil((modal + 10000) / 0.92 / 1000) * 1000;
   var hargaShopeeKecil = Math.ceil(modal / 0.88 / 1000) * 1000;
   var hargaTiktokKecil = Math.ceil(modal / 0.86 / 1000) * 1000;
-  var hargaTiktokBesar = Math.ceil((modal + 20000) / 0.92 / 1000) * 1000;
+  var hargaTiktokBesar = Math.ceil((modal + 40000) / 0.92 / 1000) * 1000;
   var hargaLazadakecil = Math.ceil(modal / 0.88 / 1000) * 1000;
   var hargaLazadabesar = Math.ceil((modal+10091)/ 0.92 / 1000) * 1000;
   
